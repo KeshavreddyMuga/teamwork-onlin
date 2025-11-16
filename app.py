@@ -21,6 +21,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Email Setup
+# redeploy trigger
 app.config['MAIL_SERVER'] = "smtp.gmail.com"
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
@@ -255,3 +256,4 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     socketio.run(app, host="0.0.0.0", port=5000)
+
