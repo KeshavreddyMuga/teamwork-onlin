@@ -254,10 +254,11 @@ def completed(pid):
 # ----------------------------------------------------
 if __name__ == "__main__":
     import os
-    port = int(os.getenv("PORT", 5000))   # ← Railway gives a PORT value
+    port = int(os.getenv("PORT", 5000))   # Railway gives PORT value
 
     from eventlet import wsgi
     import eventlet
     wsgi.server(eventlet.listen(('0.0.0.0', port)), app)
+
 
 
