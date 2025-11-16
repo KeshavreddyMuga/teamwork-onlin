@@ -253,7 +253,9 @@ def completed(pid):
 # RUN
 # ----------------------------------------------------
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
+    # use eventlet server (required for socketio)
+    from eventlet import wsgi
+    import eventlet
+    wsgi.server(eventlet.listen(('0.0.0.0', 5000)), app)
 
 
